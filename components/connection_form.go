@@ -182,6 +182,8 @@ func (form *ConnectionForm) testConnection(connectionString string) {
 		db = &drivers.SQLite{}
 	case drivers.DriverMSSQL:
 		db = &drivers.MSSQL{}
+	case drivers.DriverClickhouse:
+		db = &drivers.Clickhouse{}
 	}
 
 	err = db.TestConnection(connectionString)

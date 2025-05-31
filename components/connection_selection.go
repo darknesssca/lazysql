@@ -194,6 +194,8 @@ func (cs *ConnectionSelection) Connect(connection models.Connection) *tview.Appl
 		newDBDriver = &drivers.SQLite{}
 	case drivers.DriverMSSQL:
 		newDBDriver = &drivers.MSSQL{}
+	case drivers.DriverClickhouse:
+		newDBDriver = &drivers.Clickhouse{}
 	}
 
 	err := newDBDriver.Connect(connection.URL)

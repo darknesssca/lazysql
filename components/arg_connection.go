@@ -35,6 +35,8 @@ func InitFromArg(connectionString string) error {
 		newDBDriver = &drivers.Postgres{}
 	case drivers.DriverSqlite:
 		newDBDriver = &drivers.SQLite{}
+	case drivers.DriverClickhouse:
+		newDBDriver = &drivers.Clickhouse{}
 	}
 
 	err = newDBDriver.Connect(connection.URL)
